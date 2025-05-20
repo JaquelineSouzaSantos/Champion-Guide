@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/congo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Categorias dos Campeões </title>
+</head>
+<body class="conteudo">
+    <nav>
+        <a href wm-link="mago.html" wm-destino=".pagina">Mago</a> |
+        <a href wm-link="tanque.html" wm-destino=".pagina">Tanque</a> |
+        <a href wm-link="atiradores.html" wm-destino=".pagina">Atiradores</a> |
+        <a href wm-link="suportes.html" wm-destino=".pagina">Suporte</a> |
+        <a href wm-link="lutador.html" wm-destino=".pagina">Lutadores</a> |
+        <a href wm-link="assassino.html" wm-destino=".pagina">Assassinos</a> 
+    </nav>
+    <div class="pagina"></div>
+    <script>
+        function navegarViaAjax(url, seletor, push = true){
+            if(!url || !seletor) return
+                const elemento = document.querySelector(seletor)
+                fetch(url)
+                .then(resp => resp.text())
+                .then(html => {
+                    elemento.innerHTML = html
+                    if(push){
+                        history.push({ seletor }, "Página Ajax", url)
+                    }
+                })
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            link.onclick = e => {
+                e.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
+
+        window.onpopstate = e => {
+            if(e.state){
+                navegarViaAjax(window.location.href, e.state.seletor, false)
+            }
+        }
+    </script>
+</body>
+</html>

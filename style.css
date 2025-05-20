@@ -1,0 +1,49 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff; /* Azul-celeste claro */
+    color: #005F5F; /* Ciano escuro para contraste */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: hsl(64, 100%, 85%); /* Ciano escuro */
+    background: linear-gradient(135deg, #feffb7, #b5c200);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #3b3b3b;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none   ;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border-radius: 5px;
+}
+
+#conteudo {
+    padding: 30px;
+    background-color: rgb(255, 255, 234);
+    margin: 20px auto;
+    width: 80%;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.h1{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+}

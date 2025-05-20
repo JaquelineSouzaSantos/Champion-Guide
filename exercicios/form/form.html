@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/congo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Guia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Seu Guia</h1>
+
+        <form method="POST" action="http://localhost:3003/usuarios">
+            <input type="hidden" name="id" value="3">
+
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome">
+            </div>
+
+             <div class="form-group">
+                <label for="name">Email</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu email">
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Guia</label>
+                <textarea id="bio" name="bio" cols="30" rows="10" placeholder="Digite sobre o seu guia"></textarea>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Tipo de Jogador</legend>
+                <label for="admin">
+                    <input type="radio" id="admin" name="tipo" value="Jogador casual"> Jogador casual
+                </label>
+                <label for="regular">
+                    <input type="radio" id="regular" name="tipo" value="Jogador regular"> Jogador regular
+                </label>
+                <label for="professor">
+                    <input type="radio" id="professor" name="tipo" value="Jogador constante"> Jogador constante
+                </label>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="estado">Opções</label>
+                <select id="estado" name="estado">
+                    <option value="">Selecione</option>
+                    <option value="ac">Quero receber notificações sobre o Champion Guide</option>
+                    <option value="ba">Quero receber notificações apenas sobre o meu guia</option>
+                    <option value="ce">Não quero receber notificações</option>
+                </select>
+            </div>
+
+            <div class="form-group buttons">
+                <button type="submit">Adicionar</button>
+                <button formaction="http://localhost:3003/usuarios/3" type="submit">Alterar</button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        /* Reset e estrutura básica */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 100px;
+            padding: 100px;
+            background-color: #ffd900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #f9ff9e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            background-image: url(./img./amar.jpg);
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #454545eb;
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        select,
+        textarea {
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #fffdd3;
+            outline: none;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</body>
+</html>
